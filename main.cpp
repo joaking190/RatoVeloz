@@ -12,7 +12,7 @@ int main(){
         VAZIO, VAZIO, VAZIO, VAZIO, VAZIO};
 
     Rato rato;
-
+    aleatorio;
     procurarQueijo(labirinto, rato.posX, rato.posY,rato.deOndeVeio, rato.temQueijo);
 
 }

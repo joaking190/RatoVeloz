@@ -2,6 +2,9 @@
 #define Labirinto_h
 
 #include <Windows.h>
+#include <time.h>
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
 using namespace std;
 
@@ -23,9 +26,22 @@ struct Rato{
     int posX = 0;
     int posY = 0;
     bool temQueijo = false;
-    int deOndeVeio = ESQUERDA;  
+    int deOndeVeio = ESQUERDA;
 };
 
+int aleatorio (int ratazana [5][5]){
+        int i , j;
+        srand(time(NULL));
+        int entradaRANDx = rand () % 5;
+        int entradaRANDy = rand () % 5;
+        for (i=0; i<5 ; i++){
+            for(j=0; j<5; j++){
+                cout << ratazana[i][j];
+            }
+            cout << ratazana[entradaRANDx][entradaRANDy];
+        }
+
+}
 
 void desenharMapa(char mapa[ALTURA][LARGURA]){
     for (int i = 0; i < ALTURA; i++){
