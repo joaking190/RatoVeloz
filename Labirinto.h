@@ -60,7 +60,7 @@ char construirMapa(char mapa[ALTURA][LARGURA]){
     }
     desenharMapa(mapa);
     Sleep(1000);
-
+}
 bool procurarQueijo(char labirinto[LARGURA][ALTURA],int posX,int posY, int deOndeVeio, bool &temQueijo){
     if(posX < 0 || posY < 0 || posX >= LARGURA || posY >= ALTURA){
         return false;
