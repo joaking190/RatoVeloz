@@ -21,26 +21,7 @@ const char QUEIJO = 'Q';
 const char PAREDE = 'P';
 const char ENTRADA = 'E';
 
-char construirMapa(char mapa[ALTURA][LARGURA]){
-    srand(time(NULL));  
-    int entradaPosX = rand() % 5;
-    int entradaPosY = rand() % 5;     
 
-    for (int i = 0; i < ALTURA; i++){
-        for (int j = 0; j < ALTURA; j++){
-            if (i < 4 and j == 1)
-                mapa[i][j] = PAREDE;
-            else if (i == 2 and j == 2)
-                mapa[i][j] = QUEIJO;
-            else if(i == entradaPosX and j == entradaPosY and mapa[i][j] != PAREDE and mapa[i][j] != QUEIJO)
-                mapa[i][j] = ENTRADA;
-            else
-                mapa[i][j] = VAZIO;
-        }
-    }
-    desenharMapa(mapa);
-    Sleep(1000);
-}
 
 
 struct Rato{
@@ -60,7 +41,25 @@ void desenharMapa(char mapa[ALTURA][LARGURA]){
     cout << endl;
 }
 
+char construirMapa(char mapa[ALTURA][LARGURA]){
+    srand(time(NULL));  
+    int entradaPosX = rand() % 5;
+    int entradaPosY = rand() % 5;     
 
+    for (int i = 0; i < ALTURA; i++){
+        for (int j = 0; j < ALTURA; j++){
+            if (i < 4 and j == 1)
+                mapa[i][j] = PAREDE;
+            else if (i == 2 and j == 2)
+                mapa[i][j] = QUEIJO;
+            else if(i == entradaPosX and j == entradaPosY and mapa[i][j] != PAREDE and mapa[i][j] != QUEIJO)
+                mapa[i][j] = ENTRADA;
+            else
+                mapa[i][j] = VAZIO;
+        }
+    }
+    desenharMapa(mapa);
+    Sleep(1000);
 
 bool procurarQueijo(char labirinto[LARGURA][ALTURA],int posX,int posY, int deOndeVeio, bool &temQueijo){
     if(posX < 0 || posY < 0 || posX >= LARGURA || posY >= ALTURA){
