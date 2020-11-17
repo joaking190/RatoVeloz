@@ -3,16 +3,12 @@
 using namespace std;
 
 int main(){
-    char labirinto[5][5] = {
+    char labirinto ;
 
-        ENTRADA, PAREDE, QUEIJO, VAZIO, VAZIO,
-        VAZIO, PAREDE, VAZIO, VAZIO, VAZIO,
-        VAZIO, PAREDE, VAZIO, VAZIO, VAZIO,
-        VAZIO, PAREDE, VAZIO, VAZIO, VAZIO,
-        VAZIO, VAZIO, VAZIO, VAZIO, VAZIO};
-
+       
+construirMapa(labirinto);
     Rato rato;
-    aleatorio;
+    
     procurarQueijo(labirinto, rato.posX, rato.posY,rato.deOndeVeio, rato.temQueijo);
 
 }
