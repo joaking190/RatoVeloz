@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    char labirinto ;
+    char labirinto[5][5] ;
 
        
 construirMapa(labirinto);
