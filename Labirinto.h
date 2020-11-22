@@ -31,6 +31,30 @@ struct Rato{
     int deOndeVeio = ESQUERDA;
 };
 
+int acharPosX(char mapa[ALTURA][LARGURA]){
+    for (int i = 0; i < ALTURA; i++){
+        for (int j = 0; j < ALTURA; j++){
+            if (mapa[i][j] == ENTRADA)
+                return i;
+        } 
+    } 
+}
+
+int acharPosY(char mapa[ALTURA][LARGURA]){
+    for (int i = 0; i < ALTURA; i++){
+        for (int j = 0; j < ALTURA; j++){
+            if (mapa[i][j] == ENTRADA)
+                return j;
+        } 
+    } 
+}
+
+void inicializarRato(Rato &rato, char mapa[ALTURA][LARGURA]){
+    rato.posX = acharPosX(mapa);
+    rato.posY = acharPosY(mapa);
+    rato.temQueijo = false;
+    rato.deOndeVeio =  ENTRADA;
+}
 
 void desenharMapa(char mapa[ALTURA][LARGURA]){
     for (int i = 0; i < ALTURA; i++){
@@ -61,6 +85,7 @@ char construirMapa(char mapa[ALTURA][LARGURA]){
     desenharMapa(mapa);
     Sleep(1000);
 }
+
 bool procurarQueijo(char labirinto[LARGURA][ALTURA],int posX,int posY, int deOndeVeio, bool &temQueijo){
     if(posX < 0 || posY < 0 || posX >= LARGURA || posY >= ALTURA){
         return false;
