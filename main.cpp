@@ -4,14 +4,12 @@ using namespace std;
 
 int main(){
     char labirinto[5][5] ;
-
-       
-construirMapa(labirinto);
-    Rato rato;
-
-Rato rato;
-  inicializarRato(rato, labirinto);
+    construirMapa(labirinto);
     
-procurarQueijo(labirinto, rato.posX, rato.posY,rato.deOndeVeio, rato.temQueijo);
-
+    Rato rato;
+    inicializarRato(rato, labirinto);
+    
+    procurarQueijo(labirinto, rato.posX, rato.posY,rato.deOndeVeio, rato.temQueijo);
+    
+    return 0;
 }
